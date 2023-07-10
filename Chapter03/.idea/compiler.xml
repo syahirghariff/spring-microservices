@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="1-spring-init.microservices.product-composite-service" target="1.8" />
+      <module name="1-spring-init.microservices.product-composite-service.main" target="1.8" />
+      <module name="1-spring-init.microservices.product-composite-service.test" target="1.8" />
+      <module name="1-spring-init.microservices.product-service" target="1.8" />
+      <module name="1-spring-init.microservices.product-service.main" target="1.8" />
+      <module name="1-spring-init.microservices.product-service.test" target="1.8" />
+      <module name="1-spring-init.microservices.recommendation-service" target="1.8" />
+      <module name="1-spring-init.microservices.recommendation-service.main" target="1.8" />
+      <module name="1-spring-init.microservices.recommendation-service.test" target="1.8" />
+      <module name="1-spring-init.microservices.review-service" target="1.8" />
+      <module name="1-spring-init.microservices.review-service.main" target="1.8" />
+      <module name="1-spring-init.microservices.review-service.test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
