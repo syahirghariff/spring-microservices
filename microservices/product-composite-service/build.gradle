@@ -21,17 +21,22 @@ sourceCompatibility = 1.8
 
 repositories {
 	mavenCentral()
+	maven { url 'http://oss.jfrog.org/artifactory/oss-snapshot-local/' }
 }
 
 
 dependencies {
 	implementation project(':api')
 	implementation project(':util')
-	// CHAPTER 05: Start adding
-	implementation('io.springfox:springfox-swagger2:3.0.0')
-	implementation('io.springfox:springfox-swagger-ui:3.0.0')
-	implementation('io.springfox:springfox-spring-webflux:3.0.0')
-	// CHAPTER 05: End
+	// CHAPTER 5: Start adding
+	// Chapter 5: Need to disable springfox-swagger due to issue with http://{context-root}/swagger-ui.html
+	//implementation('io.springfox:springfox-swagger2:3.0.0') // to support Swagger 2 based documentation
+	//implementation('io.springfox:springfox-swagger-ui:3.0.0') // to enable Swagger Viewer in our microservice
+
+	// Chapter 5: Replace with Spring boot starter. URL http://{{context-root}}/swagger-ui/index.html
+	implementation ('io.springfox:springfox-boot-starter:3.0.0')
+	implementation ('io.springfox:springfox-spring-webflux:3.0.0') // the use Spring WebFlux Restful service
+
 	implementation('org.springframework.boot:spring-boot-starter-actuator')
 	implementation('org.springframework.boot:spring-boot-starter-webflux')
 	testImplementation('org.springframework.boot:spring-boot-starter-test')

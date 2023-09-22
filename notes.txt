@@ -1,0 +1,18 @@
+#Chapter 5
+
+# To build 
+./gradlew build && docker-compose build && docker-compose up -d 
+
+
+# To test the API
+curl http://localhost:8080/product-composite/1 -s | jq .
+
+# Swagger API Docs 
+http://localhost:8080/v2/api-docs
+
+# Troubleshooting of not able to view swagger-ui.html 
+https://github.com/springfox/springfox/issues/3360
+https://github.com/springfox/springfox#migrating-from-earlier-snapshot
+
+# New swagger UI URL 
+http://localhost:7005/swagger-ui/index.html

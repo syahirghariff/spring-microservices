@@ -5,7 +5,8 @@
 #   HOST=localhost PORT=7000 ./test-em-all.bash
 #
 : ${HOST=localhost}
-: ${PORT=7000}
+# : ${PORT=7000}
+: ${PORT=8080}
 
 function assertCurl() {
 
