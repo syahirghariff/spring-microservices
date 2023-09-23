@@ -1,4 +1,4 @@
-#Chapter 5
+### Chapter 5
 
 # To build 
 ./gradlew build && docker-compose build && docker-compose up -d 
@@ -16,3 +16,32 @@ https://github.com/springfox/springfox#migrating-from-earlier-snapshot
 
 # New swagger UI URL 
 http://localhost:7005/swagger-ui/index.html
+
+
+### Chapter 6
+
+# product & recommendation -> Spring Data MongoDB
+# review -> Spring Data > JPA > MySQL
+
+# Data stored in mongo DB
+docker-compose exec mongodb mongo product-db --quiet --eval "db.products.find()"
+
+# Data stored in mysql
+docker-compose exec mysql mysql -uuser -p review-db -e "select * from reviews"
+
+# Intellij Settings
+Preferences > Build, Execute, Deployment > Compiler > Annotations Processors > tick Enable annotation processing
+
+# CrudRepository -> recommendation and review
+# PagingAndSortingRepository -> product
+
+# Challenges during test
+Embedded database tests begin. Tear it down when completes
+Dont wait Netty resources to start up
+
+# @DataJpaTest
+Start embedded SQL database. H2 database dependency must be added
+Default, Spring boot configures tests to rollback to SQL Database
+    -> minimize negative side effects
+    -> Cause some of the tests to fail
+    -> @Transactional(propagation=NOT_SUPPORTED) = to disable automatic rollback
