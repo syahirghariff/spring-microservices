@@ -40,6 +40,7 @@ gradle-app.setting
 #ignore intellij idea 
 **/.idea/.gitignore
 **/.idea/*.xml
+**/.idea/modules/*
 
 #ignore .DS_Store
 .DS_Store

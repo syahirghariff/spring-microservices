@@ -1,6 +1,7 @@
 buildscript {
 	ext {
 		springBootVersion = '2.3.2.RELEASE'
+		mapStructVersion = "1.3.1.Final" // Chapter 6: dependency version
 	}
 	repositories {
 		mavenCentral()
@@ -35,6 +36,24 @@ dependencies {
 
 	//Chapter 5: add new dependency
 	implementation('io.springfox:springfox-swagger2:3.0.0') // to support Swagger 2 based documentation
+
+	// Chapter 6: MapStruct to transform between Spring Data entity objects and API model classes
+	implementation("org.mapstruct:mapstruct:${mapStructVersion}")
+
+	// Chapter 6: MapStruct generates the implementation of the bean mappings at compile time by processing MapStruct annotation
+	annotationProcessor("org.mapstruct:mapstruct-processor:${mapStructVersion}")
+	testAnnotationProcessor("org.mapstruct:mapstruct-processor:${mapStructVersion}")
+
+	// Chapter 6: To make compile-time generation work
+	compileOnly("org.mapstruct:mapstruct-processor:${mapStructVersion}")
+
+	// Chapter 6: Sprint Data for Mongo DB
+	implementation('org.springframework.boot:spring-boot-starter-data-mongodb')
+
+	// Chapter 6: Enable to run Mongo DB embedded when run Junit test
+	testImplementation('de.flapdoodle.embed:de.flapdoodle.embed.mongo')
+
+	compileOnly 'org.projectlombok:lombok:1.18.30'
 }
 
 jar {
